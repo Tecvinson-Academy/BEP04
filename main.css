@@ -1,0 +1,240 @@
+/* General Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    /*background-color: #e7ac2b;*/
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+ }
+ 
+ .container {
+    background-color: #183b03;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+ }
+ 
+ h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #11912d;
+ }
+ 
+ a {
+    color: #1b62d5;
+    text-decoration: none;
+ }
+ 
+ a:hover {
+    text-decoration: underline;
+ }
+ 
+ button, input[type="submit"] {
+    background-color: #037179;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+ }
+ 
+ button:hover, input[type="submit"]:hover {
+    background-color: #27f06a;
+ }
+
+ 
+/* Placeholder styling */
+::placeholder {
+   color: #5f6104;
+   opacity: 1; /* Show placeholder with full opacity */
+   font-style: san serif;
+}
+
+ 
+ /* Form Styles */
+ form {
+    display: flex;
+    flex-direction: column;
+ }
+
+ /* Main container styling */
+.container {
+   max-width: 350px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: #f9f9f9;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+   text-align: center;
+   color: #333;
+}
+
+/* Styling for form elements */
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+label {
+   font-weight: bold;
+   color: #555;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 16px;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+input[type="date"] {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   background-color: #fff;
+   color: #333;
+   cursor: pointer;
+   position: relative;
+   z-index: 1;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+   background: transparent;
+   color: transparent;
+   cursor: pointer;
+   z-index: 2;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+input[type="date"]:hover {
+   border-color: #888;
+}
+
+input[type="submit"] {
+   background-color: #28a745;
+   color: #fff;
+   padding: 12px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 16px;
+}
+
+input[type="submit"]:hover {
+   background-color: #218838;
+}
+
+fieldset {
+   border: 1px solid #ddd;
+   padding: 2px;
+   border-radius: 5px;
+}
+
+legend {
+   padding: 0 5px;
+   font-weight: bold;
+   color: #333;
+   
+}
+
+ 
+ input[type="text"], input[type="email"], input[type="password"], input[type="number"], select {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+ }
+
+ /* flash message style */
+ .flash-messages {
+   background-color: #d4edda;
+   color: #155724;
+   border: 1px solid #c3e6cb;
+   padding: 10px;
+   margin-bottom: 20px;
+   border-radius: 5px;
+}
+
+.flash-messages p {
+   margin: 0;
+}
+
+ 
+ /* Reservation Form Specific Styles */
+ .banner {
+    text-align: center;
+    background-color: #f7f2f2;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+ }
+ 
+ .banner h2 {
+    margin: 0;
+    font-size: 25px;
+ }
+ 
+ .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+ }
+ 
+ .card-container h3 {
+    margin-bottom: 5px;
+ }
+ 
+ .card-image {
+    width: 100%;
+    height: 5px;
+    background-color: #038d3c;
+    border-radius: 6px;
+    margin-bottom: 5px;
+ }
+ 
+ .form-row {
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .form-row input, .form-row select {
+    width: 50%;
+ }
+ 
+ @media (max-width: 300px) {
+    .form-row {
+        flex-direction: column;
+    }
+ 
+    .form-row input, .form-row select {
+        width: 100%;
+    }
+ }
+ 

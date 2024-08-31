@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reservation Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/food.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+    <section class="banner">
+        <div class="card-container">
+            <h2>BOOK YOUR TABLE NOW</h2>
+            <div class="card-image">
+                <!--image here-->
+            </div>
+          
+            <div class="card-container">
+                <h3>Reservations</h3>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+
+                <ul>
+                    {% for reservation in reservations %}
+                        <li>Reservation on {{ reservation[1] }} at {{ reservation[2] }} for {{ reservation[4] }} persons (Table {{ reservation[3] }})</li>
+                    {% endfor %}
+                </ul>
+
+                <form method="POST" action="{{ url_for('make_reservation') }}">
+                    <fieldset>
+                        <legend>Reservation Details</legend>
+
+                        <div class="form-row">
+                            <label for="reservation-date">Select Date:</label>
+                            <input type="date" id="reservation-date" name="reservation_date" required>
+                            
+                            <label for="reservation-time">Select Time:</label>
+                            <select name="reservation_time" id="reservation-time" required>
+                                <option value="">Select Hour</option>
+                                <option value="10:00">10:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="22:00">22:00</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="full_name" placeholder="Full Name" required>
+                            <label for="phone">Phone Number:</label>
+                            <input type="text" id="phone" name="phone_number" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="persons">Number of Persons:</label>
+                            <input type="number" id="persons" name="num_persons" placeholder="Number of Persons" min="1" required>
+                            <label for="table_number">Table Number:</label>
+                            <input type="number" id="table_number" name="table_number" placeholder="Table Number" min="1" required>
+                        </div>
+
+                        <div class="form-row">
+                            <input type="submit" value="BOOK TABLE">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
